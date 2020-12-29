@@ -1,0 +1,75 @@
+Possible Entities:
+- Post
+- Profile
+- User
+- Friend/Follower
+- Comment
+- Message
+- Message History
+- Notification
+- Event
+- Location
+- Admin
+- Wall/Tweets/Posts
+
+
+Post:
+- Author
+- Content
+- Date
+- Time
+- Location
+- Tagged Users
+- Hashtags
+
+Profile:
+- Username
+- Picture
+- Wall/Tweets/Posts
+
+User:
+- Email
+- Username
+- Password
+- Display Name
+
+Comment:
+- Post
+- Content
+- Author
+- Date
+- Time
+
+Message:
+- FromUser
+- ToUser
+- Content
+- Date
+- Time
+
+Message History:
+- List of Users with messages to and from you
+	- List of messages within each
+
+Notification:
+- Date
+- Time
+- Type
+- Content
+- FromUser
+- ToUser
+- wasViewed
+
+Event:
+- Host
+- Title
+- Description
+- Location
+- Date
+- Time
+- InvitedUsers
+- AttendingUsers
+- NotAttendingUsers
+
+Location
+-

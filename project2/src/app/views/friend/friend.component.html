@@ -1,0 +1,11 @@
+<div *ngIf="friend">
+    <div class="container-fluid well post">
+        <div class="media-left">
+            <img [src]="image" class="media-object" style="width:70px">
+        </div>
+        <div class="media-body">
+            <h4><strong>{{ friend.displayName | uppercase }}</strong></h4>
+            <p>{{ friend.username }}</p>
+        </div>
+    </div>
+</div>

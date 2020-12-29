@@ -1,0 +1,12 @@
+<div class="container-fluid well">
+    <div class="row">
+        <div class="col-sm-4">
+            <img [src]="image" class="img-responsive img-circle" alt="Profile Picture">
+        </div>
+        <div class="col-sm-8" *ngIf="user">
+            <h4 class="text-uppercase" id="display-name">{{ user.displayName }}</h4>
+            <p class="text-lowercase" id="username">{{ user.username }}</p>
+            <p class="text-lowercase text-muted" id="email">{{ user.email }}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div *ngIf="post">
+    <div class="container-fluid well post" style="margin-bottom: 0; margin-top: 10px;">
+        <div class="media-left">
+            <img [src]="image" class="media-object" style="width:70px">
+        </div>
+        <div class="media-body">
+            <h4><strong>{{ post.author.displayName | uppercase }}</strong></h4>
+            <p class="well well-sm post-content">{{ post.content }}</p>
+            <!-- Display likes -->
+            <div style="margin-top: 10px; margin-right: 10px;">Likes: {{ likeCount }}</div>
+
+            <!-- Like button -->
+            <span *ngIf="liked">
+                <button (click)="unlikePost()" class="btn btn-danger" style="margin-top: 10px; margin-right: 10px;">Unlike</button>
+            </span>
+
+            <span *ngIf="!liked">
+                <button (click)="likePost()" class="btn btn-primary" style="margin-top: 10px; margin-right: 10px;">Like</button>
+            </span>
+
+            <!-- Toggle comments button -->
+            <button class="btn" style="margin-top: 10px; margin-right: 10px;" (click)="toggleComments()">
+                <span *ngIf="!showComments">
+                    Show comments
+                </span>
+                <span *ngIf="showComments">
+                    Hide comments
+                </span>
+            </button>
+
+            <!-- Toggle comments button -->
+            <button class="btn" style="margin-top: 10px; margin-right: 10px;" (click)="toggleWriteComment()">
+                <span *ngIf="!writeComment">
+                    Add a comment
+                </span>
+                <span *ngIf="writeComment">
+                    Cancel
+                </span>
+            </button>
+        </div>
+    </div>
+    <div *ngIf="showComments">
+        <app-comment-feed [comments]="comments"></app-comment-feed>
+    </div>
+    <div *ngIf="writeComment">
+        <app-write-a-comment [post]="post"></app-write-a-comment>
+    </div>
+</div>

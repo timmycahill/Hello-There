@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+            <div class="container-fluid well">
+                <form>
+                    <div [formGroup]="signupForm">
+                        <h1>Sign Up</h1>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" class="form-control" formControlName="email" required>
+                            <div class="alert alert-danger" *ngIf="signupForm.controls.email.touched && !signupForm.controls.email.valid">
+                                <div>Email is invalid.</div>
+                            </div>
+    
+                            <label for="username">Username</label>
+                            <input id="username" type="text" class="form-control" minlength="3" maxlength="12" formControlName="username" required>
+                            <div class="alert alert-danger" *ngIf="signupForm.controls.username.touched && !signupForm.controls.username.valid">
+                                <div>Username is invalid.</div>
+                            </div>
+    
+                            <label for="displayName">Display Name</label>
+                            <input id="displayName" type="text" class="form-control" minlength="1" maxlength="30" formControlName="displayName" required>
+                            <div class="alert alert-danger" *ngIf="signupForm.controls.displayName.touched && !signupForm.controls.displayName.valid">
+                                <div>Display Name is invalid.</div>
+                            </div>
+    
+                            <label for="password">Password</label>
+                            <input id="password" type="password" class="form-control" minlength="8" formControlName="password" required>
+                            <div class="alert alert-danger" *ngIf="signupForm.controls.password.touched && !signupForm.controls.password.valid">
+                                <div>Password is invalid.</div>
+                            </div>
+    
+                            <label for="password2">Re-enter Password</label>
+                            <input id="password2" type="password" class="form-control" minlength="8" formControlName="password2" required>
+                            <div class="alert alert-danger" *ngIf="signupForm.controls.password2.touched && (signupForm.controls.password.value != signupForm.controls.password2.value)">
+                                <div>Passwords do not match.</div>
+                            </div>
+                        </div>
+    
+                        <div *ngIf="!signupForm.controls.password.valid || (signupForm.value.password != signupForm.value.password2)">
+                            <button type="button" class="btn btn-primary btn-block" (click)="submitData()" disabled>Sign Up</button>
+                        </div>
+                        <div *ngIf="signupForm.controls.password.valid && (signupForm.value.password === signupForm.value.password2)">
+                            <button type="button" class="btn btn-primary btn-block" (click)="submitData()">Sign Up</button>
+                        </div>
+                        <a routerLink="/login"><button class="btn btn-default btn-block">Log in</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>

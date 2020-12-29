@@ -1,0 +1,11 @@
+<div *ngIf="comment">
+    <div class="container-fluid well post" style="margin-bottom: 0; margin-top: 10px;">
+        <div class="media-left">
+            <img [src]="image" class="media-object" style="width:70px">
+        </div>
+        <div class="media-body">
+            <h4><strong>{{ comment.author.displayName | uppercase }}</strong></h4>
+            <p class="well well-sm post-content">{{ comment.content }}</p>
+        </div>
+    </div>
+</div>
