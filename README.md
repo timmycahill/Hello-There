@@ -54,3 +54,9 @@ To access the application, open up your browser and type `localhost:8080` into t
 ## Usage
 
 > Users can use Hello There to keep in touch with friends, make new ones, and share their ideas with the world.
+
+## Contributors
+
+* John Paul Sandoz
+* Thomas Gage
+* Timothy Cahill
